@@ -1,12 +1,12 @@
 # Lavalink V4 on Replit
 
-[![Run on Repl.it](https://repl.it/badge/github/@KabirJaipal/Lavalink-V4)](https://repl.it/github/@KabirJaipal/Lavalink-V4)
+[![Run on Repl.it](https://repl.it/badge/github/@KabirJaipal/Lavalink-V4-Replit)](https://repl.it/github/@KabirJaipal/Lavalink-V4-Replit)
 
 ## Installation
 
 Fork this github repository. then create a new replit project.
 
-or [click me](https://replit.com/github/@KabirJaipal/Lavalink-V4) to install it automatically.
+or [click me](https://replit.com/@KabirJaipal/Lavalink-V4-Replit) to install it automatically.
 
 # How to use
 
