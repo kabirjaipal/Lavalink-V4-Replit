@@ -1,0 +1,24 @@
+{
+  "name": "lavalink",
+  "version": "1.0.0",
+  "description": "Host Latest Lavalink V4 on Replit for free and Enjoy \n Made By Kabir Jaipal",
+  "main": "index.js",
+  "scripts": {
+    "start": "bash start.sh"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
+    "got": "^13.0.0"
+  },
+  "keywords": [
+    "lavalink",
+    "lavalink4",
+    "discord",
+    "discord-music",
+    "bot",
+    "music"
+  ],
+  "author": "KabirJaipal",
+  "license": "ISC"
+}
