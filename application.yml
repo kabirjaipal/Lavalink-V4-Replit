@@ -1,15 +1,32 @@
+plugins:
+  lavasrc:
+    providers: # Custom providers for track loading. This is the default
+      - 'ytsearch:"%ISRC%"' # If ISRC available, search on youtube
+      - "ytmsearch:%QUERY%" # If you want music.youtube results first
+      - "ytsearch:%QUERY%" # If no result found on music.youtube, search on www.youtube
+      - "scsearch:%QUERY%" # Last try to search on soundcloud.
+    sources:
+      spotify: true # Enable Spotify source
+      applemusic: false # Enable Apple Music source
+      deezer: false # Enable Deezer source
+      yandexmusic: false # Enable Yandex Music source
+      flowerytts: false # Enable Flowery TTs source
+      youtube: true # Enable YouTube search source (https://github.com/topi314/LavaSearch)
+    spotify:
+      clientId: "b458566df412473d800daacdd5937e8f"
+      clientSecret: "1b5aedea6eb04358aaebee7d76047f80"
+      countryCode: "US" # the country code you want to use for filtering the artists top tracks. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+      playlistLoadLimit: 6 # The number of pages at 100 tracks each
+      albumLoadLimit: 6 # The number of pages at 50 tracks each
 server: # REST and WS server
   port: 443
   address: 0.0.0.0
-plugins:
-#  name: # Name of the plugin
-#    some_key: some_value # Some key-value pair for the plugin
-#    another_key: another_value
 lavalink:
   plugins:
-  #    - dependency: "group:artifact:version"
-  #      repository: "repository"
-  pluginsDir: "./plugins"
+    - dependency: "com.github.topi314.lavasearch:lavasearch-plugin:1.0.0-beta.2"
+      repository: "https://maven.topi.wtf/releases"
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.0.0-beta.7"
+      repository: "https://maven.topi.wtf/releases"
   server:
     password: "kabirjaipal"
     sources:
@@ -18,24 +35,14 @@ lavalink:
       soundcloud: true
       twitch: true
       vimeo: true
+      mixer: true
       http: true
       local: false
-    filters: # All filters are enabled by default
-      volume: true
-      equalizer: true
-      karaoke: true
-      timescale: true
-      tremolo: true
-      vibrato: true
-      distortion: true
-      rotation: true
-      channelMix: true
-      lowPass: true
-    bufferDurationMs: 400 # The duration of the NAS buffer. Higher values fare better against longer GC pauses. Duration <= 0 to disable JDA-NAS. Minimum of 40ms, lower values may introduce pauses.
+    bufferDurationMs: 400 # The duration of the NAS buffer. Higher values fare better against longer GC pauses. Minimum of 40ms, lower values may introduce pauses.
     frameBufferDurationMs: 5000 # How many milliseconds of audio to keep buffered
-    opusEncodingQuality: 10 # Opus encoder quality. Valid values range from 0 to 10, where 10 is best quality but is the most expensive on the CPU.
+    opusEncodingQuality: 0 # Opus encoder quality. Valid values range from 0 to 10, where 10 is the best quality but is the most expensive on the CPU.
     resamplingQuality: LOW # Quality of resampling operations. Valid values are LOW, MEDIUM and HIGH, where HIGH uses the most CPU.
-    trackStuckThresholdMs: 10000 # The threshold for how long a track can be stuck. A track is stuck if does not return any audio data.
+    trackStuckThresholdMs: 10000 # The threshold for how long a track can be stuck. A track is stuck if it does not return any audio data.
     useSeekGhosting: true # Seek ghosting is the effect where whilst a seek is in progress, the audio buffer is read from until empty, or until seek is ready.
     youtubePlaylistLoadLimit: 6 # Number of pages at 100 each
     playerUpdateInterval: 5 # How frequently to send player updates to clients, in seconds
@@ -48,14 +55,6 @@ lavalink:
     #strategy: "RotateOnBan" # RotateOnBan | LoadBalance | NanoSwitch | RotatingNanoSwitch
     #searchTriggersFail: true # Whether a search 429 should trigger marking the ip as failing
     #retryLimit: -1 # -1 = use default lavaplayer value | 0 = infinity | >0 = retry will happen this numbers times
-    #youtubeConfig: # Required for avoiding all age restrictions by YouTube, some restricted videos still can be played without.
-    #email: "" # Email of Google account
-    #password: "" # Password of Google account
-    #httpConfig: # Useful for blocking bad-actors from ip-grabbing your music node and attacking it, this way only the http proxy will be attacked
-    #proxyHost: "localhost" # Hostname of the proxy, (ip or domain)
-    #proxyPort: 3128 # Proxy port, 3128 is the default for squidProxy
-    #proxyUser: "" # Optional user for basic authentication fields, leave blank if you don't use basic auth
-    #proxyPassword: "" # Password for basic authentication
 
 metrics:
   prometheus:
@@ -71,7 +70,9 @@ sentry:
 
 logging:
   file:
-    path: ./logs/
+    max-history: 30
+    max-size: 1GB
+  path: ./logs/
 
   level:
     root: INFO
@@ -84,8 +85,3 @@ logging:
     includeQueryString: true
     includePayload: true
     maxPayloadLength: 10000
-
-  logback:
-    rollingpolicy:
-      max-file-size: 1GB
-      max-history: 30
