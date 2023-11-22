@@ -4,26 +4,30 @@
 
 ## Installation
 
-Fork this github repository. then create a new replit project.
+1. Fork this GitHub repository.
+2. Create a new Replit project.
+3. [Click here](https://replit.com/@KabirJaipal/Lavalink-V4-Replit) to install it automatically.
 
-or [click me](https://replit.com/@KabirJaipal/Lavalink-V4-Replit) to install it automatically.
+# How to Use
 
-# How to use
+1. Run the Replit.
+2. Copy the Replit URL.
+3. Paste the URL in your bot configuration.
+   - Make sure to remove `https://` and always connect with port `443`.
 
-- Run the replit
-- copy the replit url and put it to your bot
+**Example Bot Configuration:**
 
-### make sure you remove `https://` and always connect with the port 443
+![Bot Configuration](https://media.discordapp.net/attachments/924277224402722837/1159889508616126545/image.png?ex=6532aa48&is=65203548&hm=1dbabe8640d7f62661e997e68af6fdef1b72a44126ef1058521f966f323ae37d&=&width=772&height=340)
 
-Example `bot config`
+**Note & Tips:**
 
-## ![botconfreplit](https://media.discordapp.net/attachments/924277224402722837/1159889508616126545/image.png?ex=6532aa48&is=65203548&hm=1dbabe8640d7f62661e997e68af6fdef1b72a44126ef1058521f966f323ae37d&=&width=772&height=340)
+- The default port to connect is `443`.
+- The default password is `kabirjaipal`.
+- You cannot change the Lavalink port due to Replit limitations.
 
-## Note & such
+### Keep the Replit running with [Uptime Robot](https://uptimerobot.com/).
 
-The default port to connect is `443` and the default password is `kabirjaipal`
-You can’t change the lavalink port! it will default to 443 due to how replit work.
+### Thanks For Reading! 
 
-### keep the replit on with [Uptime Robot](https://uptimerobot.com/)
+Feel free to contribute and improve the setup.
 
-### Thanks For Reading
