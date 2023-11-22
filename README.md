@@ -1,6 +1,6 @@
 # Lavalink V4 on Replit
 
-[![Run on Repl.it](https://repl.it/badge/github/@KabirJaipal/Lavalink-V4-Replit)](https://repl.it/github/@KabirJaipal/Lavalink-V4-Replit)
+[![Run on Repl.it](https://repl.it/badge/github/@KabirJaipal/Lavalink-V4-Replit)](https://repl.it/github/@kabirsingh2004/Lavalink-V4-Replit)
 
 ## Installation
 
