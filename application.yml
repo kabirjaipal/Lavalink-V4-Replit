@@ -19,7 +19,7 @@ plugins:
       playlistLoadLimit: 6 # The number of pages at 100 tracks each
       albumLoadLimit: 6 # The number of pages at 50 tracks each
 server: # REST and WS server
-  port: 80
+  port: 443
   address: 0.0.0.0
 lavalink:
   plugins:
