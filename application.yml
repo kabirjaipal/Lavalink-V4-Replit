@@ -23,12 +23,10 @@ server: # REST and WS server
   address: 0.0.0.0
 lavalink:
   plugins:
-    - dependency: "com.github.topi314.lavasearch:lavasearch-plugin:1.0.0-beta.2"
+    - dependency: "com.github.topi314.lavasearch:lavasearch-plugin:1.0.0"
       repository: "https://maven.topi.wtf/releases"
-    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.0.0-beta.7"
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.0.0"
       repository: "https://maven.topi.wtf/releases"
-    - dependency: "me.rohank05:lavalink-filter-plugin:0.0.4"
-      repository: "https://jitpack.io"
   server:
     password: "kabirjaipal"
     sources:
